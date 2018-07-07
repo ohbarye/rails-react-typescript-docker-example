@@ -4,11 +4,11 @@ services:
     image: postgres
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
-  web:
-    build: ./web
+  backend:
+    build: ./backend
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
-      - ./web:/myapp/web
+      - ./backend:/myapp/backend
     ports:
       - "3001:3000"
     depends_on:
@@ -23,4 +23,4 @@ services:
       - "3000:3000"
     command: "yarn start"
     depends_on:
-      - web
+      - backend

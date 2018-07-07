@@ -1,6 +1,6 @@
-# Rails React TypeScript Docker Example
+# Rails-React-TypeScript-Docker Example
 
-This is an example application with the following modern technology stacks. With this boilerplate, you can easily start to build your own app.
+This is an example application with the following modern web technology stacks. With this boilerplate, you can easily start to build your own app.
 
 - [Ruby](https://www.ruby-lang.org/en/) 2.5.1
 - [Rails](https://rubyonrails.org/) 5.2.0
@@ -13,7 +13,7 @@ This is an example application with the following modern technology stacks. With
 
 ```shell
 $ git clone https://github.com/ohbarye/rails-react-typescript-docker-example.git && cd rails-react-typescript-docker-example
-$ docker-compose run web rake db:migrate
+$ docker-compose run backend rake db:migrate
 $ docker-compose up -d
 $ open http://localhost:3000
 ```
