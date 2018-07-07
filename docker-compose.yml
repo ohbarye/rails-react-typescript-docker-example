@@ -5,12 +5,11 @@ services:
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
   web:
-    build: .
+    build: ./web
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
-      - .:/myapp
+      - ./web:/myapp/web
     ports:
       - "3000:3000"
     depends_on:
       - db
-
