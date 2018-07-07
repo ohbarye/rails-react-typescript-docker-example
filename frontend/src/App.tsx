@@ -1,9 +1,36 @@
+import axios from 'axios';
 import * as React from 'react';
 import './App.css';
 
 import logo from './logo.svg';
 
-class App extends React.Component {
+interface IState {
+  content: string;
+}
+
+class App extends React.Component<{}, IState> {
+  public constructor(props: {}) {
+    super(props);
+    this.state = {
+      content: 'Waiting for a response from Rails...',
+    };
+  }
+
+  public async componentDidMount() {
+    const response = await axios.get('http://localhost:3001/greetings/hello',{
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+    });
+    this.setState(prevState => {
+      return {
+        ...prevState,
+        content: response.data.content,
+      }
+    })
+  }
+
   public render() {
     return (
       <div className="App">
@@ -12,7 +39,7 @@ class App extends React.Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
+          {this.state.content}
         </p>
       </div>
     );
