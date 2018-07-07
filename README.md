@@ -13,7 +13,7 @@ This is an example application with the following modern web technology stacks. 
 
 ```shell
 $ git clone https://github.com/ohbarye/rails-react-typescript-docker-example.git && cd rails-react-typescript-docker-example
-$ docker-compose run backend rake db:migrate
+$ docker-compose run backend rake db:create
 $ docker-compose up -d
 $ open http://localhost:3000
 ```
