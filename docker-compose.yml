@@ -10,6 +10,17 @@ services:
     volumes:
       - ./web:/myapp/web
     ports:
-      - "3000:3000"
+      - "3001:3000"
     depends_on:
       - db
+  frontend:
+    image: "node:10-alpine"
+    user: "node"
+    working_dir: /myapp/frontend
+    volumes:
+      - ./frontend:/myapp/frontend
+    ports:
+      - "3000:3000"
+    command: "yarn start"
+    depends_on:
+      - web
