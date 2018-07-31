@@ -7,7 +7,7 @@
 - [Ruby](https://www.ruby-lang.org/en/) 2.5.1
 - [Rails](https://rubyonrails.org/) 5.2.0
 - [React.js](https://reactjs.org/) 16.4.1
-- [TypeScript](https://www.typescriptlang.org/) 2.9.2
+- [TypeScript](https://www.typescriptlang.org/) 3.0.1
 - [Docker](https://docs.docker.com/)
 - [PostgreSQL](https://www.postgresql.org/)
 
