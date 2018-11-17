@@ -42,7 +42,7 @@
     "webpack": "3.8.1",
     "webpack-dev-server": "2.9.4",
     "webpack-manifest-plugin": "2.0.4",
-    "whatwg-fetch": "2.0.3"
+    "whatwg-fetch": "3.0.0"
   },
   "scripts": {
     "start": "node scripts/start.js",
