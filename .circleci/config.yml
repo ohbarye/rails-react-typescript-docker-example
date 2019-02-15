@@ -1,42 +1,45 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - frontend-bundle_npm_dependencies
+      - frontend-test:
+          requires:
+            - frontend-bundle_npm_dependencies
+
 jobs:
-  build:
+  frontend-bundle_npm_dependencies:
     docker:
-      # specify the version you desire here
       - image: circleci/node:10
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4
-
     working_directory: ~/rails-react-typescript-docker-example
-
     steps:
       - checkout
-
-      # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "frontend/package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
-
+            - npm-v1-dependencies-{{ checksum "frontend/yarn.lock" }}
+            - npm-v1-dependencies-
       - run:
-          name: dependencies
+          name: yarn install
           command: |
             cd frontend
             yarn install
-
       - save_cache:
           paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "frontend/package.json" }}
+            - ~/rails-react-typescript-docker-example/frontend/node_modules
+          key: npm-v1-dependencies-{{ checksum "frontend/yarn.lock" }}
 
+  frontend-test:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/rails-react-typescript-docker-example
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - npm-v1-dependencies-{{ checksum "frontend/yarn.lock" }}
+            - npm-v1-dependencies-
       - run:
           name: tests
           command: |
