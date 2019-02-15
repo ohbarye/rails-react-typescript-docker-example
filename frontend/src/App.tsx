@@ -4,46 +4,34 @@ import './App.css';
 
 import logo from './logo.svg';
 
-interface IState {
-  content: string;
-}
+const fetchContent = async (updateContent: (content: string) => void) => {
+  const response = await axios.get('http://localhost:3001/greetings/hello',{
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+  });
+  updateContent(response.data.content)
+};
 
-class App extends React.Component<{}, IState> {
-  public constructor(props: {}) {
-    super(props);
-    this.state = {
-      content: 'Waiting for a response from Rails...',
-    };
-  }
+const App: React.FunctionComponent<{}> = ({}) => {
+  const [content, updateContent] = React.useState('Waiting for a response from Rails...');
 
-  public async componentDidMount() {
-    const response = await axios.get('http://localhost:3001/greetings/hello',{
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-    });
-    this.setState(prevState => {
-      return {
-        ...prevState,
-        content: response.data.content,
-      }
-    })
-  }
+  React.useEffect(() => {
+    fetchContent(updateContent);
+  }, []);
 
-  public render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          {this.state.content}
-        </p>
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1 className="App-title">Welcome to React</h1>
+      </header>
+      <p className="App-intro">
+        {content}
+      </p>
+    </div>
+  );
 }
 
 export default App;
