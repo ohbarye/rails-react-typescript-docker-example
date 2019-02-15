@@ -10,6 +10,7 @@
 - [TypeScript](https://www.typescriptlang.org/) 3.3.3
 - [Docker](https://docs.docker.com/)
 - [PostgreSQL](https://www.postgresql.org/)
+- [CircleCI](https://circleci.com/)
 
 ## Usage
 
