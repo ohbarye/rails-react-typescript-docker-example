@@ -4,12 +4,54 @@ workflows:
   version: 2
   test:
     jobs:
+      - backend-bundle_gem_dependencies
+      - backend-test:
+          requires:
+            - backend-bundle_gem_dependencies
+
       - frontend-bundle_npm_dependencies
       - frontend-test:
           requires:
             - frontend-bundle_npm_dependencies
 
 jobs:
+  backend-bundle_gem_dependencies:
+    docker:
+      - image: circleci/ruby:2.6-node
+    working_directory: ~/rails-react-typescript-docker-example
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - gem-v1-dependencies-{{ checksum "backend/Gemfile.lock" }}
+            - gem-v1-dependencies-
+      - run:
+          name: bundle install
+          command: |
+            cd backend
+            bundle check --path=vendor/bundle || bundle install --clean --frozen --path=vendor/bundle --jobs=4 --retry=3
+      - save_cache:
+          paths:
+            - ~/rails-react-typescript-docker-example/backend/vendor/bundle
+          key: gem-v1-dependencies-{{ checksum "backend/Gemfile.lock" }}
+
+  backend-test:
+    docker:
+      - image: circleci/ruby:2.6-node
+    working_directory: ~/rails-react-typescript-docker-example
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - gem-v1-dependencies-{{ checksum "backend/Gemfile.lock" }}
+            - gem-v1-dependencies-
+      - run:
+          name: tests
+          command: |
+            cd backend
+            bundle --path vendor/bundle
+            bundle exec rake test
+
   frontend-bundle_npm_dependencies:
     docker:
       - image: circleci/node:10
