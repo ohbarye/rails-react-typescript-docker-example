@@ -1,4 +1,4 @@
-# Rails-React-TypeScript-Docker Example
+# Rails-React-TypeScript-Docker Example [![CircleCI](https://circleci.com/gh/ohbarye/rails-react-typescript-docker-example/tree/master.svg?style=svg)](https://circleci.com/gh/ohbarye/rails-react-typescript-docker-example/tree/master)
 
 ## TL;DR
 
@@ -10,6 +10,7 @@
 - [TypeScript](https://www.typescriptlang.org/) 3.3.3
 - [Docker](https://docs.docker.com/)
 - [PostgreSQL](https://www.postgresql.org/)
+- [CircleCI](https://circleci.com/)
 
 ## Usage
 

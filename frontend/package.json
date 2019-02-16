@@ -96,7 +96,7 @@
     ],
     "globals": {
       "ts-jest": {
-        "tsConfigFile": "/myapp/frontend/tsconfig.test.json"
+        "tsConfigFile": "tsconfig.test.json"
       }
     }
   },
