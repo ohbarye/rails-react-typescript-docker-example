@@ -1,4 +1,4 @@
-# Rails-React-TypeScript-Docker Example
+# Rails-React-TypeScript-Docker Example [![CircleCI](https://circleci.com/gh/ohbarye/rails-react-typescript-docker-example/tree/master.svg?style=svg)](https://circleci.com/gh/ohbarye/rails-react-typescript-docker-example/tree/master)
 
 ## TL;DR
 
