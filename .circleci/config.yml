@@ -38,6 +38,7 @@ jobs:
   backend-test:
     docker:
       - image: circleci/ruby:2.6-node
+      - image: circleci/postgres:9.6-alpine
     working_directory: ~/rails-react-typescript-docker-example
     steps:
       - checkout
