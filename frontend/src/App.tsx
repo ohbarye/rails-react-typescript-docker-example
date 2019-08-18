@@ -1,8 +1,7 @@
+import React from 'react';
 import axios from 'axios';
-import * as React from 'react';
-import './App.css';
-
 import logo from './logo.svg';
+import './App.css';
 
 const fetchContent = async (updateContent: (content: string) => void) => {
   const response = await axios.get('http://localhost:3001/greetings/hello',{
@@ -14,7 +13,7 @@ const fetchContent = async (updateContent: (content: string) => void) => {
   updateContent(response.data.content)
 };
 
-const App: React.FunctionComponent<{}> = ({}) => {
+const App: React.FC = () => {
   const [content, updateContent] = React.useState('Waiting for a response from Rails...');
 
   React.useEffect(() => {
@@ -25,11 +24,10 @@ const App: React.FunctionComponent<{}> = ({}) => {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Welcome to React</h1>
+        <p>
+          {content}
+        </p>
       </header>
-      <p className="App-intro">
-        {content}
-      </p>
     </div>
   );
 }
