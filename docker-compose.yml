@@ -20,7 +20,7 @@ services:
     working_dir: /myapp/frontend
     volumes:
       - ./frontend:/myapp/frontend
-    command: "yarn start"
+    command: "yarn dev"
     depends_on:
       - backend
   yaichi:
