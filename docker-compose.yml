@@ -11,8 +11,6 @@ services:
     command: bundle exec rails s -p 3000 -b '0.0.0.0'
     volumes:
       - ./backend:/myapp/backend
-    ports:
-      - "3001:3000"
     depends_on:
       - db
   frontend:
@@ -22,8 +20,6 @@ services:
     working_dir: /myapp/frontend
     volumes:
       - ./frontend:/myapp/frontend
-    ports:
-      - "3000:3000"
     command: "yarn start"
     depends_on:
       - backend

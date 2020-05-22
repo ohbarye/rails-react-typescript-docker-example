@@ -25,9 +25,7 @@ $ docker-compose run backend bundle exec rake db:create
 $ docker-compose up -d
 
 # Open frontend
-$ open http://localhost:80 # You'll see yaichi page 
-# or
-$ open http://frontend.localhost
+$ open http://localhost:80 # You'll see yaichi page, then click any app
 
 # Check backend API
 $ curl -H 'Host: backend.localhost' http://localhost/greetings/hello
