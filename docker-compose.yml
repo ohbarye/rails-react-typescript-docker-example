@@ -14,7 +14,7 @@ services:
     depends_on:
       - db
   frontend:
-    image: "node:10-alpine"
+    image: "node:14-alpine"
     user: "node"
     working_dir: /myapp/frontend
     volumes:
