@@ -4,12 +4,12 @@
 
 **Here is an example application with the following modern web technology stacks. With this boilerplate, you can easily start to build your own app.**
 
-- [Ruby](https://www.ruby-lang.org/en/) 2.7.0
-- [Rails](https://rubyonrails.org/) 6.0.0
+- [Ruby](https://www.ruby-lang.org/en/) 2.7.1
+- [Rails](https://rubyonrails.org/) 6.0.1
 - [React.js](https://reactjs.org/) 16.10.2
 - [TypeScript](https://www.typescriptlang.org/) 3.6.3
 - [Docker](https://docs.docker.com/)
-- [PostgreSQL](https://www.postgresql.org/)
+- [PostgreSQL](https://www.postgresql.org/) 11
 - [CircleCI](https://circleci.com/)
 
 ## Usage
@@ -19,7 +19,7 @@ $ git clone https://github.com/ohbarye/rails-react-typescript-docker-example.git
 
 # Setup
 $ docker-compose run frontend yarn
-$ docker-compose run backend rake db:create
+$ docker-compose run backend bundle exec rake db:create
 
 # Start
 $ docker-compose up -d
