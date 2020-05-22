@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css';
 
+const BACKEND_API_URL = process.env.BACKEND_API_URL || 'http://backend.localhost';
+
 const fetchContent = async (updateContent: (content: string) => void) => {
-  const response = await fetch('http://localhost:3001/greetings/hello',{
+  const response = await fetch(`${BACKEND_API_URL}/greetings/hello`,{
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
