@@ -6,13 +6,16 @@
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack-dev-server",
+    "test": "jest",
     "typecheck": "tsc -p . --noEmit"
   },
   "devDependencies": {
+    "@types/jest": "^25.2.3",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
     "css-loader": "^3.5.3",
     "html-webpack-plugin": "^4.3.0",
+    "jest": "^26.0.1",
     "style-loader": "^1.2.1",
     "ts-loader": "^7.0.4",
     "typescript": "^3.9.3",
