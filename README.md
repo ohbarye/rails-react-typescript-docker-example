@@ -50,4 +50,4 @@ The combination, Rails + PostgreSQL + Docker Compose, is just a result I followe
 
 ### Frontend
 
-Bootstrapped with [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript).
+It consist of very thin webpack settings, TypeScript config, and Jest.
