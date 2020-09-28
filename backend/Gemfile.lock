@@ -142,7 +142,7 @@ GEM
       ffi (~> 1.0)
     regexp-examples (1.5.1)
     regexp_parser (1.7.1)
-    route_mechanic (0.1.5)
+    route_mechanic (0.2.0)
       actionpack (>= 4.2, < 6.1)
       regexp-examples (>= 1.5, < 2)
     rubyzip (2.3.0)
