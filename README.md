@@ -4,7 +4,7 @@
 
 **Here is an example application with the following modern web technology stacks. With this boilerplate, you can easily start to build your own app.**
 
-- [Ruby](https://www.ruby-lang.org/en/) 2.7.1
+- [Ruby](https://www.ruby-lang.org/en/) 2.7.2
 - [Rails](https://rubyonrails.org/) 6.0.3
 - [React.js](https://reactjs.org/) 16.13.1
 - [TypeScript](https://www.typescriptlang.org/) 4.0.3
@@ -40,7 +40,6 @@ As for my experience, I've been a Rails engineer, I'm but recently working like 
 The SPA, Of course, has a backend API, Ruby on Rails connecting PostgreSQL in my case. I use Docker Compose for defining and running multi-container Docker applications because it's not much simple to bootstrap all of applications and middlewares.
 
 **Learning each technology itself is not a burden. I rather like learning. But I've thought I'd like to pursue my playground whose tech stacks are virtually same as ones I develop in work.**
-
 
 ## Further Details
 
