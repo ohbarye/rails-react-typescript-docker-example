@@ -10,7 +10,7 @@
     "typecheck": "tsc -p . --noEmit"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.16",
+    "@types/jest": "^26.0.20",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "css-loader": "^3.5.3",
