@@ -5,7 +5,7 @@
 **Here is an example application with the following modern web technology stacks. With this boilerplate, you can easily start to build your own app.**
 
 - [Ruby](https://www.ruby-lang.org/en/) 3.0.0
-- [Rails](https://rubyonrails.org/) 6.0.3
+- [Rails](https://rubyonrails.org/) 6.1.1
 - [React.js](https://reactjs.org/) 17.0.1
 - [TypeScript](https://www.typescriptlang.org/) 4.1.3
 - [Docker](https://docs.docker.com/)
