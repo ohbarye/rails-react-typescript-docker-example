@@ -19,7 +19,7 @@ $ git clone https://github.com/ohbarye/rails-react-typescript-docker-example.git
 
 # Setup
 $ docker-compose run frontend yarn
-$ docker-compose run backend bundle exec rake db:create
+$ docker-compose run backend bin/rails db:create db:migrate
 
 # Start
 $ docker-compose up -d
