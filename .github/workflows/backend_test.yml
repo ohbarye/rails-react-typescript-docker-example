@@ -18,11 +18,13 @@ jobs:
           POSTGRES_PASSWORD: password
           POSTGRES_DB: test
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
-    env:
-      RAILS_ENV: test
-      POSTGRES_HOST: postgres
-      RAILS_DATABASE_USER: postgres
-      RAILS_DATABASE_PASSWORD: password
+    container:
+      image: ubuntu
+      env:
+        RAILS_ENV: test
+        POSTGRES_HOST: postgres
+        RAILS_DATABASE_USER: postgres
+        RAILS_DATABASE_PASSWORD: password
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
