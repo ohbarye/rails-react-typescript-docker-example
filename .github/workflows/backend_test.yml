@@ -18,15 +18,17 @@ jobs:
           POSTGRES_PASSWORD: password
           POSTGRES_DB: test
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
-    container:
-      image: ubuntu
-      env:
-        RAILS_ENV: test
-        POSTGRES_HOST: postgres
-        RAILS_DATABASE_USER: postgres
-        RAILS_DATABASE_PASSWORD: password
+    env:
+      RAILS_ENV: test
+      POSTGRES_HOST: postgres
+      RAILS_DATABASE_USER: postgres
+      RAILS_DATABASE_PASSWORD: password
     steps:
       - uses: actions/checkout@v2
+      - name: apt-get
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y libpq-dev postgresql-client
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.0.0
