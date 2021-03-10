@@ -18,11 +18,6 @@ jobs:
           POSTGRES_PASSWORD: password
           POSTGRES_DB: test
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
-    env:
-      RAILS_ENV: test
-      POSTGRES_HOST: 0.0.0.0
-      RAILS_DATABASE_USER: postgres
-      RAILS_DATABASE_PASSWORD: password
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
@@ -31,8 +26,18 @@ jobs:
           bundler-cache: true
           working-directory: ./backend
       - name: Migration
+        env:
+          RAILS_ENV: test
+          POSTGRES_HOST: 0.0.0.0
+          RAILS_DATABASE_USER: postgres
+          RAILS_DATABASE_PASSWORD: password
         run: |
           bundle exec rails db:create
           bundle exec rake db:schema:load
       - name: Run rspec
+        env:
+          RAILS_ENV: test
+          POSTGRES_HOST: 0.0.0.0
+          RAILS_DATABASE_USER: postgres
+          RAILS_DATABASE_PASSWORD: password
         run: bundle exec rake test
