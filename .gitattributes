@@ -1,8 +1,2 @@
-bundle eol=lf
-rails eol=lf
-rake eol=lf
-setup eol=lf
-spring eol=lf
-update eol=lf
-yarn eol=lf
+backend/bin/* eol=lf
 prehook eol=lf
