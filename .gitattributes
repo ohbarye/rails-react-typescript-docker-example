@@ -1,0 +1,2 @@
+backend/bin/* eol=lf
+prehook eol=lf
