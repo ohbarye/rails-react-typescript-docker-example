@@ -22,7 +22,7 @@
     "typescript": "^4.6.4",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^4.7.4"
+    "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
     "react": "^17.0.2",
