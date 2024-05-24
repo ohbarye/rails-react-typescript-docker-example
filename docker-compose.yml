@@ -32,3 +32,4 @@ services:
       - 80:3000
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+  
