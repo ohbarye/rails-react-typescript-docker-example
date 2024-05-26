@@ -11,7 +11,7 @@ services:
     container_name: backend
     platform: linux/amd64
     build: ./backend
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    command: bundle exec rails s -p 3000 -b '0.0.0.0' dev:watch
     volumes:
       - ./backend:/myapp/backend
     depends_on:
@@ -23,8 +23,10 @@ services:
     user: "node"
     working_dir: /myapp/frontend
     volumes:
+      # <host-path>:<container-path>
       - ./frontend:/myapp/frontend
-    command: "npm start"
+      # - ./frontend/src:/myapp/frontend/src
+    command: "npm start dev:watch"
     depends_on:
       - backend
   yaichi:
@@ -33,6 +35,5 @@ services:
     image: mtsmfm/yaichi:1.5.0
     ports:
       - 80:3000
-      - 81:3000
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
