@@ -29,7 +29,13 @@ module.exports = {
   ],
   devServer: {
     host: '0.0.0.0',
+    static: './src',
     port: 3000,
     disableHostCheck: true,
+  },
+  optimization: {
+
+    runtimeChunk: 'single',
+
   },
 };
