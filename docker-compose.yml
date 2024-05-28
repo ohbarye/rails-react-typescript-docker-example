@@ -29,6 +29,7 @@ services:
       - backend
   yaichi:
     container_name: yaichi
+    platform: linux/amd64
     image: mtsmfm/yaichi:1.5.0
     ports:
       - 80:3000
